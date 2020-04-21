@@ -87,6 +87,25 @@ func TestStronglyConnectedComp()  {
 	fmt.Println(sc.AllEdges())
 
 }
+
+func Euler()  {
+	g := Graph.NewGraph()
+	g.AddEdge(Graph.Edge{2,3})
+	g.AddEdge(Graph.Edge{2,5})
+	g.AddEdge(Graph.Edge{3,4})
+	g.AddEdge(Graph.Edge{1,2})
+	g.AddEdge(Graph.Edge{4,2})
+	g.AddEdge(Graph.Edge{5,1})
+	//g.AddEdge(Graph.Edge{6,1}) 增加6 1 节点 欧拉回路不成立 返回空集
+	//g.AddVertex(6)
+	//g.AddEdgeBi(Graph.Edge{6,7})
+
+	path := Graph.EluerCircuit(g)
+	fmt.Println(path)
+	fmt.Println(g.AllVertices())
+	fmt.Println(g.AllEdges())
+
+}
 func main()  {
-	TestStronglyConnectedComp()
+	Euler()
 }
